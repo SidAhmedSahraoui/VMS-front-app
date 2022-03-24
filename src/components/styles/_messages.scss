@@ -1,0 +1,58 @@
+@import "themes/_variables";
+
+.messages-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  .messages {
+    width: 70%;
+    margin: 0%;
+    padding: 25px;
+    background-color: $gray-100;
+    .title {
+      width: 25px;
+    }
+    .adds {
+      display: flex;
+      flex-direction: row;
+      .col {
+        padding-top: 44px;
+        .msg-card {
+          box-shadow: 8px 12px 16px darken($gray-400, 15%);
+          padding: 4px 12px;
+          border-radius: 8px;
+          border: 2px solid darken($gray-400, 20%);
+          margin-bottom: 12px;
+          cursor: pointer;
+          display: flex;
+          justify-content: space-between;
+          flex-direction: row;
+          align-items: center;
+          justify-items: center;
+          width: 550px;
+          .picture {
+            width: 45px;
+            height: 45px;
+          }
+          div {
+            display: flex;
+            flex-direction: column;
+
+            h4 {
+              margin: 12px 16px 2px 16px;
+            }
+            span {
+              font-weight: 600;
+              color: $gray-500;
+            }
+          }
+          p {
+            margin: 12px 16px;
+            font-weight: 500;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}

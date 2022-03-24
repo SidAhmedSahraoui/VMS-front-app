@@ -1,0 +1,58 @@
+@import "themes/_variables";
+
+.navbar {
+  border-bottom: 3px solid darken($light, 5%);
+  background-color: $gray-600;
+
+  .main-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .navbar-brand {
+      h1 {
+        vertical-align: unset;
+        font-size: 28px;
+        font-weight: 600;
+        span {
+          color: $success;
+        }
+      }
+    }
+    .search {
+      .search-bar {
+        padding: 12px;
+        font-size: 18px;
+        font-weight: 600;
+        border-radius: 12px;
+        border: 2px solid darken($light, 5%);
+      }
+      .icon {
+        width: 45px;
+        height: 45px;
+      }
+    }
+
+    .navbar-nav {
+      .dropdown-menu {
+        position: absolute;
+        margin-top: 10px !important;
+        border: 3px solid darken($light, 5%);
+
+        .dropdown-item {
+          padding: 10px 20px;
+          font-weight: 600;
+          color: darken($secondary, 10%);
+
+          .icon {
+            min-width: 20px;
+            color: $gray-400;
+          }
+
+          &:active {
+            background: $light;
+          }
+        }
+      }
+    }
+  }
+}

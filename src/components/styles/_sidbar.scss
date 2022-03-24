@@ -1,0 +1,42 @@
+@import "themes/_variables";
+
+.sid {
+  width: 20%;
+  padding: 12px 12px !important;
+  padding-bottom: 150px !important;
+
+  .crown {
+    background-color: $gray-400;
+    margin-top: 120px;
+    border-radius: 8px;
+    padding-bottom: 24px;
+    .icon {
+      width: 45px;
+      height: 45px;
+      margin: auto;
+      margin-top: 24px;
+      margin-bottom: 12px;
+    }
+  }
+  .sid-item {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 22px;
+    font-weight: 600;
+    color: $success;
+    padding: 12px 6px;
+    border-radius: 8px;
+    &:hover {
+      background-color: #18cb9b2a;
+    }
+    .icon {
+      width: 35px;
+      height: 35px;
+      margin-right: 35px;
+      margin-left: 8px;
+    }
+  }
+}

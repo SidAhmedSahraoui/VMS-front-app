@@ -1,0 +1,58 @@
+.element {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  height: 170px;
+  width: 170px;
+  margin: 0 auto;
+}
+.item {
+  width: 50px;
+  height: 50px;
+  animation: pulse 2s infinite alternate;
+  border-radius: 5px;
+}
+.aa {
+  animation-delay: 1s;
+}
+.ab {
+  animation-delay: 0.75s;
+}
+.ba {
+  animation-delay: 0.75s;
+}
+.ac {
+  animation-delay: 0.5s;
+}
+.bb {
+  animation-delay: 0.5s;
+}
+.ca {
+  animation-delay: 0.5s;
+}
+.bc {
+  animation-delay: 0.25s;
+}
+.cb {
+  animation-delay: 0.25s;
+}
+
+@keyframes pulse {
+  0% {
+    background-color: #0059b3;
+  }
+  100% {
+    background-color: #005ab300;
+  }
+}
+
+body,
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
