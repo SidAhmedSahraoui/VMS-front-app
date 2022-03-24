@@ -10,7 +10,7 @@ const Footer = () => {
           ❤️
         </span>{" "}
         <a
-          href="https://github.com/sidahmedsahraoui"
+          href="https://github.com"
           target="_blank"
           rel="noopener noreferrer">{`<Github />`}</a>
       </div>

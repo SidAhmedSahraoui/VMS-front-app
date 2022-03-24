@@ -19,7 +19,7 @@ const Profile = () => {
           <div className="profile">
             <img className="picture" src={Avatar} alt="Profile" />
             <div className="user-details mt-4">
-              <h3 className="name"> Sid Ahmed Sahraoui</h3>
+              <h3 className="name"> Name</h3>
               <h5 className="bio">Front-end developer</h5>
             </div>
           </div>
