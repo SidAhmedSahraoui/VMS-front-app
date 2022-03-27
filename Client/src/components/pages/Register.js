@@ -9,8 +9,7 @@ import { register, clearErrors } from "../../redux/actions/authActions";
 import { setAlert } from "../../redux/actions/alertActions";
 
 const Register = (props) => {
-  const { isAuthenticated, error, loading, register, clearErrors, setAlert } =
-    props;
+  const { isAuthenticated, error, register, clearErrors, setAlert } = props;
 
   const [user, setUser] = useState({
     username: "",
