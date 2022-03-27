@@ -11,6 +11,8 @@ import Cameras from "./pages/Cameras";
 import Messages from "./pages/Messages";
 import Notification from "./pages/Notification";
 import Cam_1 from "./pages/Cam_1";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 function App() {
   return (
     <Router>
@@ -23,6 +25,8 @@ function App() {
           <Route exact path="/messages" component={Messages} />
           <Route exact path="/notifications" component={Notification} />
           <Route exact path="/settings" component={Settings} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/register" component={Register} />
         </Switch>
         <Footer />
       </div>
