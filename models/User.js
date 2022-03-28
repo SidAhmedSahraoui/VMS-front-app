@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const UserSchema = mongoose.Schema({
   username: {
@@ -15,11 +15,6 @@ const UserSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  allow_messages: {
-    type: Boolean,
-    required: true,
-    default: true,
-  },
   name: String,
   bio: String,
   gender: Number,
@@ -29,4 +24,4 @@ const UserSchema = mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model('user', UserSchema);
+module.exports = mongoose.model("user", UserSchema);

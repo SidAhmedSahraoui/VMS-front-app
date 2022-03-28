@@ -66,7 +66,9 @@ const Register = (props) => {
         <title>Register</title>
       </Helmet>
       <Container>
-        <div className="container-inner px-3 mt-4">
+        <div
+          className="container-inner px-3 mt-4"
+          style={{ width: "450px", margin: "auto" }}>
           <div className="auth mx-auto">
             <h4 className="mb-3">
               <strong>Create your account!</strong>

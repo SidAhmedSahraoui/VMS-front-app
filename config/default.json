@@ -1,4 +1,4 @@
 {
-  "mongoURI": "mongodb://localhost:27017/cheikh",
+  "mongoURI": "mongodb://127.0.0.1:27017/msv",
   "jwtSecret": "123456"
 }

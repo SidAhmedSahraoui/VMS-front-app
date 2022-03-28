@@ -1,73 +1,93 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Container, Navbar, Nav, Dropdown } from "react-bootstrap";
+import { connect } from "react-redux";
+import { Container, Navbar, Nav, Button, Dropdown } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faUser,
   faSignOutAlt,
+  faEnvelope,
   faCog,
-  faBell,
 } from "@fortawesome/free-solid-svg-icons";
 
-const NavbarComponent = () => {
+// Actions
+import { logout, loadUser } from "../../redux/actions/authActions";
+
+const NavbarComponent = (props) => {
+  const { isAuthenticated, user, logout, loadUser } = props;
+
+  useEffect(() => {
+    loadUser();
+
+    // eslint-disable-next-line
+  }, []);
+
+  const logoutFunction = () => {
+    logout();
+  };
+
+  const userMenu = (
+    <>
+      <Dropdown alignRight>
+        <Dropdown.Toggle variant="outline-light">
+          Hey, <strong>{user && user.username}</strong>
+        </Dropdown.Toggle>
+
+        <Dropdown.Menu>
+          <Link to="/dashboard" className="dropdown-item">
+            <FontAwesomeIcon className="icon mr-3" icon={faUser} size="lg" />
+            Dashboard
+          </Link>
+          <Link to="/messages" className="dropdown-item">
+            <FontAwesomeIcon
+              className="icon mr-3"
+              icon={faEnvelope}
+              size="lg"
+            />
+            Messages
+          </Link>
+          <Link to="/settings" className="dropdown-item">
+            <FontAwesomeIcon className="icon mr-3" icon={faCog} size="lg" />
+            Settings
+          </Link>
+          <Dropdown.Divider></Dropdown.Divider>
+          <button onClick={() => logoutFunction()} className="dropdown-item">
+            <FontAwesomeIcon
+              className="icon mr-3"
+              icon={faSignOutAlt}
+              size="lg"
+            />
+            Logout
+          </button>
+        </Dropdown.Menu>
+      </Dropdown>
+    </>
+  );
+
+  const guestMenu = (
+    <>
+      <Link to="/">
+        <Button variant="outline-light">Get started</Button>
+      </Link>
+    </>
+  );
+
   return (
     <Navbar bg="white" expand="lg">
-      <Container className="main-container">
+      <Container>
         <Link to="/">
-          <Navbar.Brand>
-            <h1>
-              Camera<span> Surveillance</span>.
-            </h1>
-          </Navbar.Brand>
+          <Navbar.Brand>MSV</Navbar.Brand>
         </Link>
-        <Nav>
-          <>
-            <Dropdown alignRight>
-              <Dropdown.Toggle variant="outline-light">
-                Hey, <strong>Cheikh</strong>
-              </Dropdown.Toggle>
 
-              <Dropdown.Menu>
-                <Link to="/" className="dropdown-item">
-                  <FontAwesomeIcon
-                    className="icon mr-3"
-                    icon={faUser}
-                    size="lg"
-                  />
-                  Profile
-                </Link>
-                <Link to="/notifications" className="dropdown-item">
-                  <FontAwesomeIcon
-                    className="icon mr-3"
-                    icon={faBell}
-                    size="lg"
-                  />
-                  Notification
-                </Link>
-                <Link to="/settings" className="dropdown-item">
-                  <FontAwesomeIcon
-                    className="icon mr-3"
-                    icon={faCog}
-                    size="lg"
-                  />
-                  Settings
-                </Link>
-                <Dropdown.Divider></Dropdown.Divider>
-                <button className="dropdown-item">
-                  <FontAwesomeIcon
-                    className="icon mr-3"
-                    icon={faSignOutAlt}
-                    size="lg"
-                  />
-                  Logout
-                </button>
-              </Dropdown.Menu>
-            </Dropdown>
-          </>
-        </Nav>
+        <Nav className="ml-auto">{isAuthenticated ? userMenu : guestMenu}</Nav>
       </Container>
     </Navbar>
   );
 };
 
-export default NavbarComponent;
+const mapSateToProps = (state) => ({
+  isAuthenticated: state.auth.isAuthenticated,
+  user: state.auth.user,
+});
+
+export default connect(mapSateToProps, { logout, loadUser })(NavbarComponent);

@@ -21,13 +21,13 @@ function App() {
         <div className="app">
           <Navbar />
           <Switch>
-            <Route exact path="/" component={Cameras} />
+            <Route exact path="/" component={Login} />
             <Route exact path="/cam_1" component={Cam_1} />
             <Route exact path="/groups" component={Profile} />
             <Route exact path="/messages" component={Messages} />
             <Route exact path="/notifications" component={Notification} />
             <Route exact path="/settings" component={Settings} />
-            <Route exact path="/login" component={Login} />
+            <Route exact path="/dashboard" component={Cameras} />
             <Route exact path="/register" component={Register} />
           </Switch>
           <Footer />
