@@ -14,6 +14,9 @@ import Cam_1 from "./pages/Cam_1";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import { Provider } from "react-redux";
+import PrivateRoute from "./routes/PrivateRoute";
+import VideoRecorder from "./pages/videoRecorder";
+import ObjectDetection from "./pages/ObjectDetection";
 function App() {
   return (
     <Router>
@@ -22,13 +25,22 @@ function App() {
           <Navbar />
           <Switch>
             <Route exact path="/" component={Login} />
-            <Route exact path="/cam_1" component={Cam_1} />
-            <Route exact path="/groups" component={Profile} />
-            <Route exact path="/messages" component={Messages} />
-            <Route exact path="/notifications" component={Notification} />
-            <Route exact path="/settings" component={Settings} />
-            <Route exact path="/dashboard" component={Cameras} />
-            <Route exact path="/register" component={Register} />
+            <PrivateRoute exact path="/cam_1" component={Cam_1} />
+            <PrivateRoute exact path="/groups" component={Profile} />
+            <PrivateRoute exact path="/messages" component={Messages} />
+            <PrivateRoute exact path="/settings" component={Settings} />
+            <PrivateRoute exact path="/dashboard" component={Cameras} />
+            <PrivateRoute
+              exact
+              path="/recorded_video"
+              component={VideoRecorder}
+            />
+            <PrivateRoute
+              exact
+              path="/live_object_detection"
+              component={ObjectDetection}
+            />
+            <PrivateRoute exact path="/register" component={Register} />
           </Switch>
           <Footer />
         </div>

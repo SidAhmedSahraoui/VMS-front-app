@@ -4,8 +4,39 @@
   border-bottom: 3px solid darken($light, 5%);
 
   .navbar-brand {
+    font-weight: 600;
+    font-size: 28px;
     img {
-      vertical-align: unset;
+      width: 45px;
+      height: 45px;
+    }
+    .icon {
+      color: $success;
+    }
+    span {
+      color: $success;
+    }
+  }
+  .links {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    width: 750px;
+    flex-wrap: wrap;
+    .drop-item {
+      width: 30%;
+      font-weight: 600;
+      font-size: 16px;
+      color: $success;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      .icon {
+        margin-right: 15px;
+      }
+    }
+    .first {
+      width: 15%;
     }
   }
 

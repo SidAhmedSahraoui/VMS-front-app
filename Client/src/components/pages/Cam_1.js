@@ -3,7 +3,7 @@ import Helmet from "react-helmet";
 import ReactPlayer from "react-player";
 import Sidbar from "../layout/Sidbar";
 import Video from "../../images/song.mp4";
-import { Form } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 const Cam_1 = () => {
   return (
     <>
@@ -11,7 +11,6 @@ const Cam_1 = () => {
         <title>Cameras | Dashboard</title>
       </Helmet>
       <div className="cam">
-        <Sidbar />
         <div className="main container-inner px-3 mt-4 text-center">
           <h1 className="title">Cam_1</h1>
           <div className="grp-container">
@@ -52,6 +51,14 @@ const Cam_1 = () => {
             <Form.Group>
               <Form.Label>params 4</Form.Label>
               <Form.Control type="range"></Form.Control>
+            </Form.Group>
+            <Form.Group>
+              <Button
+                type="submit"
+                className="btn btn-primary"
+                varient="success">
+                Submit
+              </Button>
             </Form.Group>
           </Form>
         </div>

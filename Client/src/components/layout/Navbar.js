@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { Container, Navbar, Nav, Button, Dropdown } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -8,8 +8,14 @@ import {
   faSignOutAlt,
   faEnvelope,
   faCog,
+  faHome,
+  faVideo,
+  faCamera,
+  faObjectGroup,
+  faPhotoVideo,
+  faRecordVinyl,
 } from "@fortawesome/free-solid-svg-icons";
-
+import { Camera } from "../../images/camera.svg";
 // Actions
 import { logout, loadUser } from "../../redux/actions/authActions";
 
@@ -28,6 +34,24 @@ const NavbarComponent = (props) => {
 
   const userMenu = (
     <>
+      <div className="links">
+        <Link to="/dashboard" className="drop-item first">
+          <FontAwesomeIcon className="icon mr-3" icon={faHome} size="lg" />
+          Home
+        </Link>
+        <Link to="/live_object_detection" className="drop-item">
+          <FontAwesomeIcon className="icon mr-3" icon={faVideo} size="lg" />
+          Live Object Detection
+        </Link>
+        <Link to="/recorded_video" className="drop-item">
+          <FontAwesomeIcon
+            className="icon mr-3"
+            icon={faRecordVinyl}
+            size="lg"
+          />
+          Video Recorder
+        </Link>
+      </div>
       <Dropdown alignRight>
         <Dropdown.Toggle variant="outline-light">
           Hey, <strong>{user && user.username}</strong>
@@ -76,7 +100,9 @@ const NavbarComponent = (props) => {
     <Navbar bg="white" expand="lg">
       <Container>
         <Link to="/">
-          <Navbar.Brand>MSV</Navbar.Brand>
+          <Navbar.Brand>
+            Camera <span>Surveillance</span>.
+          </Navbar.Brand>
         </Link>
 
         <Nav className="ml-auto">{isAuthenticated ? userMenu : guestMenu}</Nav>

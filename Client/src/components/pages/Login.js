@@ -23,7 +23,7 @@ const Login = (props) => {
 
   useEffect(() => {
     if (isAuthenticated) {
-      props.history.push("/");
+      props.history.push("/dashboard");
     }
 
     // eslint-disable-next-line
@@ -95,13 +95,6 @@ const Login = (props) => {
               </Form.Group>
 
               <div className="links d-flex align-items-center justify-content-between mt-4">
-                <span>
-                  New member?{" "}
-                  <Link className="link-secondary" to="/register">
-                    Sign up
-                  </Link>
-                </span>
-
                 <Button variant="primary" type="submit">
                   Sign in
                 </Button>

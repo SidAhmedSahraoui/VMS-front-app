@@ -20,22 +20,12 @@ const Cameras = () => {
           <div className="grp-container">
             <div className="grp-card">
               <h2>Cam_1</h2>
-              <ReactPlayer
-                className="vid"
-                playing="true"
-                controls="true"
-                loop="true"
-                url={Video}
-              />
+              <img src="" alt="" srcset="" />
               <Link to="/cam_1" className="sid-item">
                 <Button className="btn" variant="success" type="submit">
                   Display
                 </Button>
               </Link>
-
-              <Button className="btn btn-red" variant="danger" type="submit">
-                Remove
-              </Button>
             </div>
             <div className="grp-card">
               <h2>Cam_2</h2>
@@ -51,9 +41,6 @@ const Cameras = () => {
                   Display
                 </Button>
               </Link>
-              <Button className="btn btn-red" variant="danger" type="submit">
-                Remove
-              </Button>
             </div>
 
             <div className="grp-card">
@@ -70,9 +57,6 @@ const Cameras = () => {
                   Display
                 </Button>
               </Link>
-              <Button className="btn btn-red" variant="danger" type="submit">
-                Remove
-              </Button>
             </div>
           </div>
         </div>

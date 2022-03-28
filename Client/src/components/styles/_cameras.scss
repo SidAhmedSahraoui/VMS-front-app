@@ -3,7 +3,7 @@
 .cameras {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
   .main {
     width: 70%;
     margin: 0%;
@@ -18,7 +18,7 @@
       justify-content: space-evenly;
       flex-wrap: wrap;
       .grp-card {
-        background-color: $gray-700;
+        background-color: rgb(168, 156, 156);
         color: $light;
         border: 2px solid darken($gray-400, 10%);
         margin: 8px;
